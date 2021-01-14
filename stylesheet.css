@@ -1,0 +1,599 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 12px;
+}
+
+/* Personal Website Header */
+#pw-header {
+    background: linear-gradient(45deg, rgba(12,184,100,1) 15%, rgba(0,221,255,1) 100%);
+}
+
+#pw-header h1 {
+    color: white;
+}
+#pw-header h2 {
+    color: rgb(121, 119, 119);
+}
+
+#pw-header h1, #pw-header h2 {
+    text-align: center;
+    
+}
+
+/* Column Info(how it sits in the column div) */
+.column-info {
+    position: relative;
+    width: 85%;
+    left: 5%;
+    font-size: 1.5rem;
+}
+
+#begin-info {
+    position: relative;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 85%;
+    left: 5%;
+    top: 25%;
+}
+
+/* SVG Info(size of svg, where it sits) */
+#svg-computer-girl {
+    position: relative;
+    width: 85%;
+    height: 80%;
+    top: 10%;
+}
+
+#svg-computer-girl svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* SVG Info(size of svg, where it sits) */
+
+#Hair, #Person {
+    transform: scaleX(-1);
+    transform-origin: center;
+}
+
+/* SVG Beginning States */
+
+#Code1 > path, #Code2 > path {
+    opacity: 0;
+}
+
+
+#StackOverflow > path {
+    opacity: 0;
+}
+
+#Vector_28 {
+   fill:rgb(108, 99, 255);
+}
+
+
+/* Coding animations */
+.typein {
+    animation: typein 1s ease 1 forwards;
+}
+
+
+.flip {
+    animation: flip 5s ease 2 alternate;
+} 
+
+.openBrowser {
+    animation: openBrowser 5s ease 1 forwards;
+}
+
+
+
+@keyframes typein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes flip {
+    0%, 10% {
+        transform: scaleX(-1);
+        transform-origin: center;
+    }
+    90%, 100% {
+        transform: scaleX(1);
+        transform-origin: center;
+    }
+}
+
+@keyframes openBrowser {
+    from {
+        fill:rgb(108, 99, 255);
+    }
+    to {
+        fill: #E3E1FF
+    }
+}
+
+
+/* About Me Section CSS */
+#about-me-section {
+    /* background: linear-gradient(45deg, rgba(235,51,9,1) 0%, rgba(238,168,152,1) 83%, rgba(238,238,238,1) 100%); */
+    background: linear-gradient(45deg, rgba(121,121,121,1) 0%, rgba(176,172,171,1) 48%, rgba(238,238,238,1) 100%);  
+    background-attachment: fixed;
+    height: 40rem;
+    display: flex;
+    flex-direction: row;
+}
+.section-header {
+    position: relative;
+    font-size: 3rem;
+    width: 30%;
+    left: 5%;
+    font-weight: bold;
+}
+
+
+/* Making of the code IDE */
+#about-me-background {
+    position: relative;
+    width: 40rem;
+    height: 30rem;   
+    /* left: calc(75% - 20rem); */
+    margin-top: 2rem;   
+    border-radius: 1rem;
+}
+
+#about-me-top-bar {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    background-color: rgb(146, 146, 146);
+    z-index: 1;
+    padding-left: 10%;
+    font-size: 2rem;
+    border-top-left-radius: 1rem; border-top-right-radius: 1rem;
+}
+
+#top-bar-clear {
+    position: absolute;
+    left: 82.5%;
+    font-size: 1.5rem;
+    top: calc(50% - 0.75rem);  
+}
+
+#top-bar-clear:hover {
+    cursor: pointer;
+    color: #313131;
+}
+
+#top-bar-delete {
+    position: absolute;
+    background-color: rgb(235, 59, 59);
+    top: calc(60% - 1rem);
+    left: 90%;
+}
+
+
+#about-me-foreground {
+    position: relative;
+    width: 100%;
+    max-height: 90%;
+    overflow: scroll;  
+    background-color: #f5f5f5;
+    z-index: 1;
+    border-bottom-left-radius: 1rem; border-bottom-right-radius: 1rem;
+}
+
+#about-me-input, #code-line-input  {
+    text-decoration: none;
+    border: none;
+    background-color: #f5f5f5;
+    font-family: monospace;
+    font-size: 0.875rem;
+    font-weight: normal;
+}
+
+#about-me-foreground > pre {
+    padding: 0.75rem;
+    display: none;
+}
+#about-me-foreground > pre:first-child {
+    padding: 0.75rem;
+    display: block;
+}
+#about-me-foreground > pre:last-child {
+    padding: 0.75rem;
+    border-bottom-left-radius: 1rem; border-bottom-right-radius: 1rem;
+}
+input:focus {
+    outline: none
+}
+.code-error-message {
+    display: block;
+    unicode-bidi: embed;
+    font-family: monospace;
+    white-space: pre;
+    background-color: rgb(228, 150, 150);
+    padding: 0.75rem;
+    padding-left: 1.25rem;
+    font-size: .875em;
+}
+.code-output-message {
+    display: block;
+    unicode-bidi: embed;
+    font-family: monospace;
+    white-space: pre;
+    background-color: #f5f5f5;
+    padding: 0.75rem;
+    padding-left: 1.25rem;
+    font-size: .875em;
+}
+
+/* CSS for fun facts */
+
+#facts-about-me-container {
+    position: relative;
+    top: 1rem;
+    width: 50%;
+    height: 20rem;
+    padding-left: 1rem;
+}
+
+.fun-fact-card {
+    position: absolute;
+    margin-top: 1rem;
+    margin-left: 2rem; 
+    padding-bottom: 1rem;
+    width: 75%;
+    height: auto;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, .35); 
+    backdrop-filter: blur(1rem);
+    transform: scale(1);
+}
+
+.fun-fact-card-top-bar {
+    position: relative;
+    width: 100%;
+    height: 30%;
+    color: rgb(46, 46, 46);
+    padding-left: 1rem;
+    border-top-left-radius: 1rem; border-top-right-radius: 1rem;
+    background-color: rgb(94, 94, 94);
+    font-weight: bold;
+}
+
+#fun-fact-delete {
+    position: relative;
+    background-color: rgb(235, 59, 59);
+    top: calc(60% - 1rem);
+    height: 100%;
+    float: right;
+}
+#fun-fact-delete:hover, #top-bar-delete:hover {
+    background-color: rgb(196, 55, 55);
+}
+
+.fun-fact-text {
+    margin-left: 1rem; 
+    margin-top: 1rem;          
+}
+
+.fun-fact-img {
+    position: relative;
+    max-width: 85%;     
+    max-height: 85%; 
+    margin-top: 1rem;
+    margin-left: 7.5%;    
+}
+.fun-fact-img > img {
+    border-radius: 10%;  
+}
+
+
+.popIn {
+    animation: popIn 1s ease 1 forwards;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+#software-thinker-svg {
+    overflow: visible;
+    width: 20em;
+    height: 20em;
+    margin-top: 5%;
+}
+#software-thinker-svg > svg {
+    font-size: 1rem;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+#Bird {
+    offset-path: path("M44.3939 7.14088C43.4306 7.14088 42.0264 6.89188 41.0916 7.16887C40.308 7.40104 39.2594 7.4327 38.5379 7.83352C38.0393 8.11054 37.4721 8.23573 37.0267 8.58213C36.5736 8.93452 36.476 9.49757 36.2361 10.0374C35.9746 10.6257 35.8943 11.2883 35.6764 11.8984C35.2547 13.0793 34.6935 14.1827 33.8854 15.1377C33.6248 15.4457 33.4334 15.7415 33.0598 15.9283C32.7767 16.0698 32.3856 15.995 32.1153 16.1452C31.7712 16.3363 30.6764 16.3294 30.4432 15.9563C30.0819 15.3782 29.7932 14.7434 29.4077 14.1652C28.7399 13.1636 27.3938 12.1118 26.2663 11.6185C25.4585 11.2651 23.8952 12.5022 23.139 12.8079C22.7326 12.9722 22.3982 13.1915 21.9776 13.3117C21.0214 13.5849 20.2185 14.1217 19.305 14.473C18.883 14.6354 18.4957 14.957 18.0666 15.1447C17.5227 15.3827 17.0095 15.5807 16.4365 15.7324C15.9155 15.8703 13.2835 16.1851 13.1622 15.4875C12.981 14.4454 12.7484 12.69 11.714 12.1153C11.0335 11.7373 10.3175 11.4226 9.5101 11.4226C7.26126 11.4226 4.00789 11.1904 2.77263 8.96692C2.15141 7.84873 1.88265 5.34152 3.2134 4.6222C3.7859 4.31274 4.1888 3.99253 4.85054 3.99253C5.82499 3.99253 6.93338 3.83323 7.87296 4.11846C9.28929 4.54842 10.8216 4.77419 12.1547 5.44077C16.1158 7.4213 20.4283 4.84492 23.9925 3.11099C24.9306 2.65461 26.2607 2.12356 27.3228 2.10352C28.0965 2.08892 29.1725 1.91732 29.9044 2.17348C30.7411 2.4663 31.4879 3.06166 32.2972 3.42582C33.7341 4.07243 35.9987 3.79526 37.5374 3.54476C38.649 3.36381 39.7561 3.1917 40.8677 3.01304C41.9098 2.84556 42.9258 2.48132 43.9881 2.48132C44.9473 2.48132 46.1569 3.6397 46.1569 4.68516C46.1569 5.35334 46.4855");
+    animation: followpath 4s linear infinite;
+}
+
+#list-of-languages {
+    
+}
+.language-line {
+    width: 100%;
+    position: relative;
+    left: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.slidein {
+    animation: slidein 2s ease 1 forwards;
+}
+
+.language-text {
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+.image-line {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.image-line > img {
+    position: relative;
+    width: 25%;
+    height: 25%;   
+}
+#mongodb-logo, #react-logo {
+    width: 10%;
+    height: 10%;
+}
+#express-logo {
+    width: 20%;
+    height: 20%;
+}
+
+#web-dev-img-line {
+    justify-content: flex-start;
+}
+
+#html-logo, #css-logo, #js-logo {
+    width: 10%;
+    height: 10%;
+    margin-left: 10%;
+}
+
+#personal-footer {
+    padding-bottom: 3rem;
+}
+
+#dsa-line {
+    justify-content: flex-start;
+}
+
+#python-logo, #java-logo {
+    width: 10%;
+    height: 10%;
+    margin-left: 10%;
+}
+
+
+@keyframes followpath {
+    to {
+      motion-offset: 100%;
+    }
+ }
+
+@keyframes slidein {
+    from {
+        left: 100%;
+        opacity: 0;
+    }
+    to {
+        left: 0%;
+        opacity: 1;
+    }
+}
+
+.project-card {
+    position: relative;
+    left: 10%;
+    width: 17.5rem;
+    height: 20rem;
+    /* background: linear-gradient(35deg, rgba(84,200,149,1) 8%, rgba(79,125,201,1) 64%, rgba(75,71,238,1) 100%); */
+    background: linear-gradient(35deg, rgba(84,200,149,1) 8%, rgba(74,161,255,1) 100%, rgba(79,125,201,1) 100%);
+    border-radius: 1rem;
+    transform: scale(0);
+}
+.project-card:hover {
+    animation: zoom 0.5s ease 1 forwards;
+}
+.zoomReverse {
+    animation: zoomReverse 0.5s ease 1 forwards;
+}
+.popIn {
+    animation: popIn 1s ease 1 forwards;
+}
+
+.project-card-title {
+    color: white;
+    font-size: 2rem;
+    width: 100%;
+    height: 15%;
+    text-align: center;
+}
+.project-card-img {
+    position: relative;
+    width: 85%;
+    height: 50%;
+    left: 7.5%;
+    margin-top: 5%;
+}
+.project-card-img > img {
+    position: relative;
+    border-radius: 1rem;
+    height: 100%;
+}
+.project-card-languages {
+    position: relative;
+    width: 85%;
+    height: 15%;
+    left: 10%;
+}
+.project-card-languages > *:hover {
+    color: #292929;
+    
+}
+
+
+.project-card-link-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    width: 85%;
+    left: 10%;
+    height: 20%;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+}
+.project-card-link-icons > * {
+    position: relative;
+    font-size: 1.5rem;
+    margin-right: 5%;
+}
+.project-card-link-icons > *:hover {
+    color: rgb(8, 89, 156);
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(1)
+    }
+    to {
+        transform: scale(1.1) 
+    }
+}
+@keyframes zoomReverse {
+    from {
+        transform: scale(1.1)
+    }
+    to {
+        transform: scale(1) 
+    }
+}
+
+#question-svg {
+    width: 50%;
+
+}
+#question-svg svg {
+    width: 100%;
+    height: 100%;
+}
+
+#contact-us-card-header {
+    text-align: center;
+    font-weight: bold;
+    color: #4a4a4a;
+    font-size: 2rem;
+}
+.contact-us-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* justify-content: center; */
+    width: 85%;
+    left: 5%;
+    height: 95%;
+    border-radius: 5%;
+    background-color: rgb(211, 210, 210);
+}
+
+.contact-us-card > div {
+    position: relative;
+    margin-top: 1rem;
+    width: 85%;
+    left: 10%;  
+}
+.contact-us-card div > input, .contact-us-card div > textarea {
+    text-decoration: none;
+    border: none;
+    border-radius: 1rem;
+    font-family: monospace;
+    font-size: 0.875rem;
+    font-weight: normal;
+    width: 80%;
+}
+
+#submit-contact {
+    position: relative;
+    width: 7.5rem;
+    left: calc(50% - 3.75rem);
+    margin-bottom: 1rem;
+}
+
+#link-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #4a4a4a;
+}
+#link-icons a {
+    color: #4a4a4a;
+}
+#link-icons a > svg {
+    font-size: 3rem !important;
+    margin-left: 3rem;
+    margin-top: 10rem;
+    fill: #4a4a4a;    
+}
+#link-icons a:hover {
+    color: black !important;
+}   
+
+
+#link-icons > svg:hover {
+    color: black;
+}
+
+a {
+    /* color: inherit !important; */
+}
+
+
+
+
+
+
